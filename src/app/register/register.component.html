@@ -1,0 +1,34 @@
+<main class="my-form">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-8">
+        <h3 class="text-center mt-5">USERS</h3>
+        <app-search-user (play)="bar()" (blur)="bar1()"></app-search-user>
+        <div class="panel panel-success" *ngIf="b">
+          <table class="table table-hover mt-3" id="task-table">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users" (click)="routing(user.id)">
+              <td>{{user.id}}</td>
+              <td>{{user.firstName}}</td>
+              <td>{{user.lastName}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="add">
+<button routerLink="/add">+</button>
+</div>
+

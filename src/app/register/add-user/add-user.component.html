@@ -1,0 +1,44 @@
+<main class="my-form">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-8">
+<div class="card">
+  <div class="card-header">Register</div>
+  <div class="card-body">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label>
+        <p class="label-txt">ENTER YOUR EMAIL</p>
+        <input type="text" class="input" formControlName="email">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <span class="help-block" *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">Email is False</span>
+      </label>
+      <label>
+        <p class="label-txt">ENTER YOUR FIRST-NAME</p>
+        <input type="text" class="input" formControlName="firstName">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <span class="help-block" *ngIf="!profileForm.get('firstName').valid && profileForm.get('firstName').touched">First-Name is Necessary</span>
+      </label>
+      <label>
+        <p class="label-txt">ENTER YOUR LAST-NAME</p>
+        <input type="text" class="input" formControlName="lastName">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+        <span class="help-block" *ngIf="!profileForm.get('lastName').valid && profileForm.get('lastName').touched">Last-Name is  Necessary</span>
+      </label>
+      <button type="submit" [disabled]="!profileForm.valid">Register</button>
+    </form>
+    <div class="show">
+      <button type="button" [disabled]="!profileForm.valid" (click)="onShow()">Show</button>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-pop-up [user]="user" (cancel)="delete()" *ngIf="!show"></app-pop-up>

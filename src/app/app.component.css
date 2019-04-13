@@ -1,0 +1,25 @@
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+.body{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+.nav-link{
+    color: grey;
+    padding-top: 40px;
+    transition: 0.5s;
+}
+.nav-link:hover{
+    color: black;
+}
+.active{
+    color: black;
+}

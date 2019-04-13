@@ -1,0 +1,28 @@
+<div id="search-component">
+  <h4>User Search</h4>
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" (blur)="blur1()" />
+<div class="panel panel-success" *ngIf="display">
+  <table class="table table-hover mt-3" id="task-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users$ | async" (click)="routing(user.id)">
+      <td>{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+    <tr *ngIf="!users.length" class="no-result">
+      <td colspan="4" class="text-center">no result</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>

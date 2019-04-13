@@ -1,0 +1,21 @@
+.pop{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.container-1{
+    position: fixed;
+    width: 400px;
+    height: 230px;
+    left: calc(50% - 200px);
+    top: 250px;
+    z-index: 1000;
+    box-shadow: 2px 2px 18px gray;
+    padding: 20px;
+    background-color: white;
+}
